@@ -15,7 +15,6 @@ export class AppComponent {
   
   saveName(member: string){
     this.newMemberName = member;
-    console.log(this.newMemberName);
   }
   
   addMember(){
@@ -45,6 +44,7 @@ export class AppComponent {
       return
     }
     this.errorMessage = '';
+    //creates the replica of the members array so that the original array is not manipulated
     const allMembers = [...this.members];
     while(allMembers.length){
       for(let i = 0; i < this.numberOfTeams; i++){
@@ -65,5 +65,6 @@ export class AppComponent {
     }
     this.members = []
     this.numberOfTeams = ''
+    console.log(this.teams);
   }
 }
